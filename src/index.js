@@ -2,7 +2,8 @@ import "./styles.css";
 import {homePage} from "./home.js";
 import { menu} from "./menu.js";
 import {about } from "./about.js";
-import {contact } from "./contact.js";
+import {contact } from "./contact.js"
+import{makeProject, makeTodo, getProjects} from "./todo.js";
 const homeButton = document.querySelector("#home")
 const menuButton = document.querySelector("#menu");
 const aboutButton = document.querySelector("#about");
@@ -14,5 +15,6 @@ aboutButton.addEventListener("click", ()=> about());
 contactButton.addEventListener("click", ()=> contact() )
 homePage();
 
+makeProject("Tupays first project");
+makeTodo("2", "d")
 
-console.log("Hello world");
