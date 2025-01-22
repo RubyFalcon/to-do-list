@@ -1,11 +1,9 @@
 import "./styles.css";
 import {homePage} from "./home.js";
 import { menu} from "./menu.js";
-import {about } from "./about.js";
-import {contact } from "./contact.js";
 import Project  from "./modules/project.js";
 
-import{makeProject, makeTodo, getProjects} from "./todo.js";
+
 const homeButton = document.querySelector("#home")
 const menuButton = document.querySelector("#menu");
 const aboutButton = document.querySelector("#about");
