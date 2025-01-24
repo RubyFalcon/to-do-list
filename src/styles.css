@@ -23,6 +23,9 @@
     font-family: 'Roboto' , sans-serif;
     color: black;
     background-size: cover;
+    display: grid;
+    grid-template-columns: 1fr 7fr;
+    gap: 2rem
   }
   
   /* 5. Improve media defaults */
@@ -62,10 +65,12 @@
 
  
 
-  header {
-    border-bottom: 2px solid rgb(233, 163, 34);
+  .sidebar {
+    background-color: #dcdcdd;
   }
-  header nav{
+  .sidebar nav {
+    display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     padding: 1rem;
@@ -75,7 +80,7 @@
 
   }
 
-  header button {
+  .sidebar button {
     outline: none;
     border: none;
     border-radius: 2em;
@@ -85,7 +90,7 @@
     font-size: 1.2rem;
   }
 
-  header button:hover {
+  .sidebar button:hover {
     background-color: rgba(180, 178, 178, 0.2);
   }
   .content{
@@ -175,7 +180,7 @@
         font-size: .7rem;
         text-align: center;
      }
-     header nav{
+    .sidebar nav{
         align-items: center;
         justify-content: center;
         padding: 1rem;
@@ -188,7 +193,22 @@
         padding: 0;
       }
   }
+  .tasks {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2rem;
+  }
 
+  .task {
+    background-color: white;
+    border-radius: 1rem;
+    width: 15rem;
+    height: 10rem;
+    padding: 1rem;
+    display:  flex;
+    flex-direction: column;
+    align-items: start;
+  }
   @media (max-width: 400px) {
     .content {
       width: 20rem;

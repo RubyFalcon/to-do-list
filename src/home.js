@@ -10,10 +10,8 @@ export const  homePage = () => {
     h1.id  = "Todo app";
     h1.textContent = "Falcon's Todo"
     
-    const p  = document.createElement("p");
-    p.id= "restaurant-description";
-    p.textContent = "Welcome to Falcon's Fabolous Taverna, opened in the 80s in Holborn, a staple of Greek quisine in London";
-    content.append(h1, p);
+  
+    content.append(h1);
 
 
     let today = new Project("Today");
@@ -25,6 +23,6 @@ export const  homePage = () => {
     const taskContainer = document.createElement("div");
     taskContainer.className = "tasks";
     today.tasks.forEach(task => taskContainer.append(taskCard(task, 1)))
-    document.body.appendChild(taskContainer)
+    content.appendChild(taskContainer)
 
 }

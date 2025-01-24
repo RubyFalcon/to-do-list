@@ -1,7 +1,7 @@
 export default function taskCard(obj, num){
     // num paramater will be used to switch between simple or full elements
     const taskContainer =  document.createElement("div");
-    taskContainer.classList = "task-page";
+    taskContainer.classList = "task";
     const title = document.createElement("h2");
 
     console.log(`${obj.name} was added to our title`)
