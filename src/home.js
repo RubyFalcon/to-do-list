@@ -20,7 +20,7 @@ export const  homePage = () => {
     today.addTask(new Task({ name: "Eat Wine", description: "time to eat some food", dueDate: "24/12/2025", priority:"med", project: "Today"}))
     today.addTask(new Task({ name: "Eat Mangarines", description: "time to eat some food", dueDate: "24/12/2025", priority:"med", project: "Today"}))
     console.log(today);
-    const taskContainer = document.createElement("div");
+    const taskContainer = document.createElement("ul");
     taskContainer.className = "tasks";
     today.tasks.forEach(task => taskContainer.append(taskCard(task, 1)))
     content.appendChild(taskContainer)

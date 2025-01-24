@@ -1,9 +1,15 @@
 export default function taskCard(obj, num){
     // num paramater will be used to switch between simple or full elements
-    const taskContainer =  document.createElement("div");
+    const taskContainer =  document.createElement("li");
     taskContainer.classList = "task";
+    const firstList = document.createElement("li");
+    firstList.className = "task-list"
+    const checkbox =  document.createElement("input");
+    checkbox.setAttribute("type", "checkbox");
+    checkbox.setAttribute("name", "completed");
+    checkbox.className = "checkbox";
     const title = document.createElement("h2");
-
+    firstList.append()
     console.log(`${obj.name} was added to our title`)
     title.textContent = obj.name;
     
@@ -15,8 +21,12 @@ export default function taskCard(obj, num){
     priority.textContent = obj.priority;
     const project = document.createElement("p");
     project.textContent = obj.project;
+    const secondList = document.createElement("li");
+    secondList.className = "task-list";
     if(num = 1){
-        taskContainer.append(title,dueDate,priority)
+        firstList.append(checkbox, title)
+        secondList.append(dueDate, priority)
+        taskContainer.append(firstList,secondList)
     }
     else if(num = 2){
         taskContainer.append(title, dueDate, description, priority,project);
