@@ -3,7 +3,7 @@ import Task from "./modules/task.js"
 import taskCard from "./components/taskCard.js";
 
 export const  homePage = () => {
-    
+   
     const content = document.querySelector(".content");
     content.textContent = "";
     const h1 = document.createElement("h1");
@@ -22,7 +22,13 @@ export const  homePage = () => {
     console.log(today);
     const taskContainer = document.createElement("ul");
     taskContainer.className = "tasks";
-    today.tasks.forEach(task => taskContainer.append(taskCard(task, 1)))
-    content.appendChild(taskContainer)
-
+    today.tasks.forEach(task => {
+        taskContainer.append(taskCard(task))
+        
+    })
+    content.appendChild(taskContainer);
+    const checkbox = document.querySelector(".checkbox");
+    checkbox.addEventListener("click", ()=> console.log("i was clicked"))
+    
+    
 }

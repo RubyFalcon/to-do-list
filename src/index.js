@@ -12,3 +12,5 @@ aboutButton.addEventListener("click", ()=> about());
 contactButton.addEventListener("click", ()=> contact() )
 homePage();
 
+
+

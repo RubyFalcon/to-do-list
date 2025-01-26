@@ -1,4 +1,8 @@
-export default function taskCard(obj, num){
+import Task from "../modules/task";
+
+
+export default function taskCard(obj){
+    const task = new Task({obj})
     // num paramater will be used to switch between simple or full elements
     const taskContainer =  document.createElement("li");
     taskContainer.classList = "task";
@@ -32,14 +36,12 @@ export default function taskCard(obj, num){
     project.textContent = obj.project;
     const secondList = document.createElement("li");
     secondList.className = "task-list";
-    if(num = 1){
-        firstList.append(checkbox, title)
-        secondList.append(dueDate, priority)
-        taskContainer.append(firstList,secondList)
-    }
-    else if(num = 2){
-        taskContainer.append(title, dueDate, description, priority,project);
-    }
+   
+    firstList.append(checkbox, title)
+    secondList.append(dueDate, priority)
+    taskContainer.append(firstList,secondList)
+   
+
    
     return taskContainer;
 }
