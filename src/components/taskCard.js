@@ -8,6 +8,15 @@ export default function taskCard(obj, num){
     checkbox.setAttribute("type", "checkbox");
     checkbox.setAttribute("name", "completed");
     checkbox.className = "checkbox";
+    if (obj.completed){
+        taskContainer.className = "task completed";
+        checkbox.checked = true;
+    }
+    else {
+        taskContainer.className = "task";
+        checkbox.checked =  false;
+    }
+   
     const title = document.createElement("h2");
     firstList.append()
     console.log(`${obj.name} was added to our title`)

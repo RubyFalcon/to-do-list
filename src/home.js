@@ -15,7 +15,7 @@ export const  homePage = () => {
 
 
     let today = new Project("Today");
-    today.addTask(new Task({ name: "Eat Food", description: "time to eat some food", dueDate: "24/12/2025", priority:"med", project: "Today"}))
+    today.addTask(new Task({ name: "Eat Food", description: "time to eat some food", dueDate: "24/12/2025", priority:"med", project: "Today", completed: true}))
     today.addTask(new Task({ name: "Eat Pork", description: "time to eat some food", dueDate: "24/12/2025", priority:"med", project: "Today"}))
     today.addTask(new Task({ name: "Eat Wine", description: "time to eat some food", dueDate: "24/12/2025", priority:"med", project: "Today"}))
     today.addTask(new Task({ name: "Eat Mangarines", description: "time to eat some food", dueDate: "24/12/2025", priority:"med", project: "Today"}))

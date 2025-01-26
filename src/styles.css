@@ -167,6 +167,10 @@ li{
     background-color: var(--second-color);
   }
 
+  .completed {
+    color: gray;
+    text-decoration: line-through;
+  }
 
   @media (max-width: 500px) {
     .content {
