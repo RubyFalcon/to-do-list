@@ -1,51 +1,74 @@
-import {format} from "date-fns";
 
-export default class Task {
-    constructor({name, description, priority, dueDate, completed = false , project} ){
-        this.name = name;
-        this.description = description;
-        this.priority = priority;
-        this.dueDate = dueDate;
-        this.completed = completed;
-        this.project = project;
-    }
 
-    setName(name){
-        this.name = name;
+export class Task {
+    constructor(title, description, dueDate, priority, done = false) {
+        this._title = title;
+        this._description = description;
+        this._dueDate = dueDate;
+        this._priority = priority;
+        this._done = done;
     }
 
-    getName(){
-        return this.name;
-    }
-    
-    setDescription(description){
-        this.description = description;
+    // Getter for done
+    get done() {
+        return this._done;
     }
 
-    getDescription(){
-        return this.description;
+    // Setter for done
+    set done(value) {
+        this._done = value;
     }
 
-    setPriority(priority){
-        this.priority = priority;
+    // Getter for title
+    get title() {
+        return this._title;
     }
 
-    getPrioritiy(){
-        return this.priority
+    // Setter for title
+    set title(newTitle) {
+        if (typeof newTitle === 'string' && newTitle.trim().length > 0) {
+            this._title = newTitle;
+        } else {
+            throw new Error("Invalid title");
+        }
     }
 
-    setDate(dueDate){
-        this.dueDate = dueDate || format(new Date(), "yyyy-MM-dd");
-    }
-    getDate(){
-        return this.dueDate
+    // Getter for description
+    get description() {
+        return this._description;
     }
 
-    setCompleted(completed){
-        this.completed = completed;
-    }
-    getCompleted(){
-        return this.completed;
+    // Setter for description
+    set description(newDescription) {
+        if (typeof newDescription === 'string') {
+            this._description = newDescription;
+        } else {
+            throw new Error("Invalid description");
+        }
     }
 
-}
+    // Getter for dueDate
+    get dueDate() {
+        return this._dueDate;
+    }
+
+    // Setter for dueDate
+    set dueDate(newDueDate) {
+
+        this._dueDate = newDueDate;
+
+    }
+
+    // Getter for priority
+    get priority() {
+        return this._priority;
+    }
+
+    // Setter for priority
+    set priority(newPriority) {
+        if (['low', 'medium', 'high'].includes(newPriority.toLowerCase())) {
+            this._priority = newPriority;
+        } else {
+            throw new Error("Priority must be 'low', 'medium', or 'high'");
+        }
+    }

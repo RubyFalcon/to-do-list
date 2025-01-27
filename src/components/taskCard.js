@@ -1,7 +1,7 @@
-import Task from "../modules/task";
+import { Project } from "../modules/project";
 
 
-export default function taskCard(obj){
+export default function taskCard(){
     const task = new Task({obj})
     // num paramater will be used to switch between simple or full elements
     const taskContainer =  document.createElement("li");
