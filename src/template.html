@@ -12,17 +12,14 @@
 
              <div class="flex-buttons">
                 <button id="create-project-btn">Create Project </button>
-                <button id="create-task-button">Create Task</button>
+                <button id="create-task-btn">Create Task</button>
              </div>
         </div>
     
     <!-- Sidebar -->
         <div class= "sidebar">
             <nav>
-                <button id="home">Home</button>
-                <button id="menu">Menu</button>
-                <button id="about">About</button>
-                <button id="contact">Contact</button>
+              
                 <div class="github">
                     <a href="https://github.com/RubyFalcon" target="_blank">
                         <svg class="icon_github" viewBox="0 0 32 32">
@@ -37,9 +34,9 @@
         <div class="content"></div>
     <!-- Modal -->
     <div id="modal" class="hidden modal">
-        <button id="close-edit-modal">x</button>
+        <button id="close-modal">x</button>
         <h2>Edit Task</h2>
-        <form action="" id="edit-task-form">
+        <form action="" id="task-form">
             <input type="text" name="title" id="edit-title" placeholder="Task Title" required>
             <textarea name="description" id="edit-description" required placeholder="Task description"></textarea>
             <input type="date" name="date" id="edit-dueDate" required>

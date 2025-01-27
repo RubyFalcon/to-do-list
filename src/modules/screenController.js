@@ -1,5 +1,5 @@
 import { TodoController } from "./todoController";
-import Project from "./projectClass";
+import Project from "./project";
 import { format } from 'date-fns';
 
 
@@ -21,7 +21,7 @@ export const ScreenController = function () {
     const taskForm = document.getElementById('task-form');
 
     let todoList = TodoController;
-    let currentProject= null;
+    let currentProject = null;
 
 
     const openModal = function () {
@@ -31,27 +31,25 @@ export const ScreenController = function () {
         modal.classList.add("hidden");
     }
 
-    const submitForm  = function () {
-        taskForm.addEventListener("submit", (e)=> {
-            e.preventDefault;
+    const submitModal = function () {
+        taskForm.addEventListener('submit', (e) => {
+            e.preventDefault();
 
-
-            //Get form values
-
+            // Get values from the form
             const title = document.getElementById('title').value;
             const description = document.getElementById('description').value;
             const dueDate = document.getElementById('dueDate').value;
             const priority = document.getElementById('priority').value;
 
-            //create new Task 
-            // add Task to list
-            currentProject.createTask(title,description,dueDate, priority);
+            // Create a new Task object
+            // Add task to the list
+            currentProject.createTask(title, description, dueDate, priority)
             updateProjectInLocalStorage(currentProject);
-             // Clear the form and close the modal
+            // Clear the form and close the modal
             taskForm.reset();
             modal.classList.add('hidden');
             displayTasks();
-        })
+        });
     }
 
     const openEditModal = function (task) {
@@ -140,7 +138,7 @@ export const ScreenController = function () {
             const checkbox =  document.createElement("input");
             checkbox.setAttribute("type", "checkbox");
             checkbox.setAttribute("name", "done");
-            checkbox.className.add("checkbox");
+            checkbox.classList.add("checkbox");
             // if (task.done){
             //     taskList.className = "task completed";
             //     checkbox.checked = true;
@@ -152,7 +150,7 @@ export const ScreenController = function () {
            
             const title = document.createElement("h2");
             title.classList.add("class-title");
-            title.textContent = task.name;
+            title.textContent = task.title;
             
             const dueDate = document.createElement("p");
             dueDate.textContent = formattedTaskDate;
@@ -197,7 +195,7 @@ export const ScreenController = function () {
                 editCloseModal.addEventListener('click', closeEditModal);
             });
             checkbox.checked = task.done;
-            updateTaskVisualState(task, title, dueDate, editTaskButton, detailsTaskButton);
+            updateTaskVisualState(task,taskList,  title, dueDate, editTaskButton, detailsTaskButton);
             checkbox.addEventListener('change', () => {
                 handleCheckboxChange(task, checkbox, title, dueDate, editTaskButton, detailsTaskButton);
             });
@@ -206,7 +204,8 @@ export const ScreenController = function () {
         }
         
     }
-    let updateTaskVisualState = function (task, taskTitle, editButton, detailsButton) {
+    let updateTaskVisualState = function (task,taskList, taskTitle, editButton, detailsButton) {
+         
         if (task.done) {
             taskTitle.style.textDecoration = 'line-through';
             taskList.classList.add("completed");;
@@ -215,16 +214,16 @@ export const ScreenController = function () {
             
         } else {
             taskTitle.style.textDecoration = 'none';
-            task.classList.remove("completed");
+            taskList.classList.remove("completed");
             editButton.disabled = false;
             detailsButton.disabled = false;
 
         }
     }
 
-    let handleCheckboxChange = function (task, checkbox, taskTitle, editButton, detailsButton) {
+    let handleCheckboxChange = function (task, taskList, checkbox, taskTitle, editButton, detailsButton) {
         task.done = checkbox.checked;
-        updateTaskVisualState(task, taskTitle,  editButton, detailsButton);
+        updateTaskVisualState(task,taskList,  taskTitle,  editButton, detailsButton);
         updateProjectInLocalStorage(currentProject);
     }
 
@@ -489,7 +488,7 @@ export const ScreenController = function () {
     let createDOMTask = function () {
         createTaskButton.addEventListener("click", openModal);
         closeModalBtn.addEventListener("click", closeModal);
-        sumbitModal();
+        submitModal();
     }
 
     return {

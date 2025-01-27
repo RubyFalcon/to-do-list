@@ -98,6 +98,7 @@ li{
     background-color: rgba(180, 178, 178, 0.2);
   }
   .content{
+    grid-column: 2;
     height: 60%;
     width: 100%;
     display: flex;
@@ -251,7 +252,7 @@ li{
     text-decoration: line-through;
   }
 
-  .modal .hidden {
+  .hidden {
     display: none;
   }
   .red-boder {
