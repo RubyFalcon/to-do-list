@@ -1,6 +1,6 @@
 
 
-export class Task {
+export default class Task {
     constructor(title, description, dueDate, priority, done = false) {
         this._title = title;
         this._description = description;
@@ -72,3 +72,4 @@ export class Task {
             throw new Error("Priority must be 'low', 'medium', or 'high'");
         }
     }
+}

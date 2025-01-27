@@ -1,6 +1,6 @@
 import Task from "./task";
 
-export class Project {
+export default class Project {
 
     #tasks = [];
 
