@@ -215,7 +215,10 @@ li{
   input[type="checkbox"]:hover{
     cursor: pointer;
   }
-  
+  .task-button-container {
+    display: flex;
+    gap: .5rem;
+  }
   
   
   .completed {
@@ -227,7 +230,21 @@ li{
   .modal .hidden {
     display: none;
   }
+  .red-boder {
+    border-left: red;
+  }
 
+  .yellow-border {
+    border-left: yellow;
+  }
+
+  .green-border {
+    border-left: green;
+  }
+  
+  .gray-border {
+    border-left: gray;
+  }
   @media (max-width: 500px) {
     .content {
         margin: 0 auto;
