@@ -224,6 +224,10 @@ li{
     text-decoration: line-through;
   }
 
+  .modal .hidden {
+    display: none;
+  }
+
   @media (max-width: 500px) {
     .content {
         margin: 0 auto;

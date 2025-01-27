@@ -5,8 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Do it?</title>
 </head>
-<body>
+<body>  
+    <!-- Header -->
+        <div class="header">
+             <h1>ToDo List</h1>
+
+             <div class="flex-buttons">
+                <button id="create-project-btn">Create Project </button>
+                <button id="create-task-button">Create Task</button>
+             </div>
+        </div>
     
+    <!-- Sidebar -->
         <div class= "sidebar">
             <nav>
                 <button id="home">Home</button>
@@ -23,7 +33,49 @@
             </nav>
             
         </div>
+    <!-- Content -->
         <div class="content"></div>
+    <!-- Modal -->
+    <div id="modal" class="hidden modal">
+        <button id="close-edit-modal">x</button>
+        <h2>Edit Task</h2>
+        <form action="" id="edit-task-form">
+            <input type="text" name="title" id="edit-title" placeholder="Task Title" required>
+            <textarea name="description" id="edit-description" required placeholder="Task description"></textarea>
+            <input type="date" name="date" id="edit-dueDate" required>
+            <select name="priority" id="edit-priority">
+                <option value="" disabled selected>Select priority</option>
+                <option value="High">High</option>
+                <option value="Medium">Medium</option>
+                <option value="Low">Low</option>
+            </select>
+            <button type="submit">Save Task</button>
+        </form>
+    </div>
+
+    <div id="description-modal" class="hidden modal">
+        <div class="bg-white rounded-lg p-6 w-96 relative">
+            <button id="close-view-modal" class="absolute top-2 right-2 text-gray-500 hover:text-black">&times;</button>
+            <h2 class="text-xl font-bold mb-4">Task Description</h2>
+            <p id="view-description" class="text-gray-700">
+                <p id="set-description"></p>
+            </p>
+        </div>
+    </div>
+
+    <div id="create-project-modal" class="hidden modal">
+        <div class="bg-white rounded-lg p-6 w-96 relative">
+            <button id="close-create-project-modal" class="absolute top-2 right-2 text-gray-500 hover:text-black">&times;</button>
+            <h2 class="text-xl font-bold mb-4">Create New Project</h2>
+            <form id="create-project-form" class="space-y-4">
+                <input type="text" id="project-name" class="border border-gray-300 rounded w-full p-2" placeholder="Project Name" required />
+                <button type="submit" class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 w-full">
+                    Save Project
+                </button>
+            </form>
+        </div>
+    </div>
+        
 
 </body>
 </html>
