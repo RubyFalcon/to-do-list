@@ -210,6 +210,10 @@ li{
                             "shadow-sm",
                             "hover:shadow-md" */
   }
+
+  .task-container {
+    width: 90%;
+  }
   .task {
   
    
@@ -294,16 +298,19 @@ li{
   .hidden {
     display: none;
   }
-  .red-boder {
-    border-left: red;
+  .red-border {
+    border-left: .4em solid red;
+    border-top-left-radius: .2em;
+    border-bottom-left-radius: .2em;
   }
 
+
   .yellow-border {
-    border-left: yellow;
+    border-left: .4em solid yellow;
   }
 
   .green-border {
-    border-left: green;
+    border-left: .4em solid green;
   }
   
   .gray-border {

@@ -130,9 +130,10 @@ export const ScreenController = function () {
             const formattedTaskDate = formatTaskDate(task.dueDate);
 
             let taskContainer = document.createElement('div');
+            taskContainer.className = "task-container";
             const taskList =  document.createElement("li");
             taskList.classList = "task";
-            taskList.id = `${chooseRightColor(task.priority)}`
+            taskList.classList.add (`${chooseRightColor(task.priority)}`);
             const firstList = document.createElement("li");
             firstList.className = "task-list"
             const checkbox =  document.createElement("input");
@@ -149,7 +150,7 @@ export const ScreenController = function () {
             // }
            
             const title = document.createElement("h2");
-            title.classList.add("class-title");
+            title.classList.add("task-title");
             title.textContent = task.title;
             
             const dueDate = document.createElement("p");
@@ -185,7 +186,8 @@ export const ScreenController = function () {
             firstList.append(checkbox, title)
             secondList.append(dueDate, taskButtonContainer)
             taskList.append(firstList,secondList)
-            content.append(taskList);
+            taskContainer.append(taskList)
+            content.append(taskContainer);
 
             editTaskButton.addEventListener('click', () => {
                 console.log('Clicked on Edit Button');
@@ -308,7 +310,7 @@ export const ScreenController = function () {
     };
 
     let getDOMTask = function (event) {
-        const taskElement = event.target.closest(".task-list");
+        const taskElement = event.target.closest(".task-container");
         let value = taskElement.querySelector('.task-title');
         return value.textContent.trim();
     }
