@@ -66,11 +66,20 @@ li{
     isolation: isolate;
   }
 
-
+  .header {
+    grid-column: 2/-1;
+    grid-row: 2/-1;
+    display: grid;
+    gap: 2rem;
+    justify-content: center;
+    align-items: centers;
+  }
  
 
   .sidebar {
     background-color: var(--second-color);
+    grid-column: 1/-2;
+    grid-row: 1/3;
   }
   .sidebar nav {
     display: flex;
@@ -84,17 +93,47 @@ li{
 
   }
 
-  .sidebar button {
+  button {
     outline: none;
     border: none;
-    border-radius: 2em;
-    padding: .5rem 1rem;
-    background-color: rgba(0,0,0,0);
-    color: var(--primary-color);
+    border-radius: 1em;
     font-size: 1.2rem;
+    color: black;
   }
 
-  .sidebar button:hover {
+  .task-button-container button {
+   
+   
+  
+    color: white;
+   
+  }
+  .task-button-container .details-button {
+    background-color: rgb(0, 141, 0);
+    
+
+  }
+  .task-button-container .details-button:hover {
+    background-color: rgb(6, 202, 6);
+  }
+
+  .task-button-container .edit-button {
+    background-color: rgb(255, 187, 0);
+  }
+
+  .task-button-container .edit-button:hover {
+    background-color: hsl(46, 100%, 60%);
+  }
+
+  .task-button-container .delete-button {
+    background-color: hsl(12, 100%, 50%);
+  }
+
+  .task-button-container .delete-button:hover {
+    background-color: hsl(12, 100%, 70%);
+  }
+
+   button:hover {
     background-color: rgba(180, 178, 178, 0.2);
   }
   .content{
