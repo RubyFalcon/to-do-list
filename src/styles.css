@@ -146,6 +146,30 @@ li{
     width: 80%;
   }
 
+  .project {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    border-color: rgb(108, 108, 247);
+ 
+    /* "flex",
+                            "items-center",
+                            "p-4",
+                            "text-lg",
+                            "h-[50px]",
+                            "cursor-pointer",
+                            "text-gray-700",
+                            "font-medium",
+                            "rounded-md",
+                            "hover:bg-blue-100",
+                            "hover:text-blue-600",
+                            "transition",
+                            "duration-200",
+                            "border",
+                            "border-blue-200",
+                            "shadow-sm",
+                            "hover:shadow-md" */
+  }
   .task {
   
    
