@@ -33,42 +33,47 @@
     <!-- Content -->
         <div class="content"></div>
     <!-- Modal -->
-
+        <!--  modal Backgrop to darken background  -->
+          <div class="modal-backdrop hidden"></div>
     <div id="modal" class="modal hidden">
-        <button id="close-modal">x</button>
-        <h2>Create a new Task</h2>
-        <form  id="task-form">
-            <input type="text" name="title" id="edit-title" placeholder="Task Title" required>
-            <textarea name="description" id="edit-description" required placeholder="Task description"></textarea>
-            <input type="date" name="date" id="edit-dueDate" required>
-            <select name="priority" id="edit-priority">
-                <option value="" disabled selected>Select priority</option>
-                <option value="High">High</option>
-                <option value="Medium">Medium</option>
-                <option value="Low">Low</option>
-            </select>
-            <button type="submit">Save Task</button>
-        </form>
+        <div class="modal-container">
+            <button id="close-modal">x</button>
+            <h2>Create a new Task</h2>
+            <form  id="task-form">
+                <input type="text" name="title" id="edit-title" placeholder="Task Title" required>
+                <textarea name="description" id="edit-description" required placeholder="Task description"></textarea>
+                <input type="date" name="date" id="edit-dueDate" required>
+                <select name="priority" id="edit-priority">
+                    <option value="" disabled selected>Select priority</option>
+                    <option value="High">High</option>
+                    <option value="Medium">Medium</option>
+                    <option value="Low">Low</option>
+                </select>
+                <button type="submit">Save Task</button>
+            </form>
+        </div>
     </div>
     <div id="edit-modal" class="modal hidden">
-        <button id="close-edit-modal">x</button>
-        <h2>Edit Task</h2>
-        <form action="" id="edit-task-form">
-            <input type="text" name="title" id="edit-title" placeholder="Task Title" required>
-            <textarea name="description" id="edit-description" required placeholder="Task description"></textarea>
-            <input type="date" name="date" id="edit-dueDate" required>
-            <select name="priority" id="edit-priority">
-                <option value="" disabled selected>Select priority</option>
-                <option value="High">High</option>
-                <option value="Medium">Medium</option>
-                <option value="Low">Low</option>
-            </select>
-            <button type="submit">Save Task</button>
-        </form>
+        <div class="modal-container">
+            <button id="close-edit-modal">x</button>
+            <h2>Edit Task</h2>
+            <form action="" id="edit-task-form">
+                <input type="text" name="title" id="edit-title" placeholder="Task Title" required>
+                <textarea name="description" id="edit-description" required placeholder="Task description"></textarea>
+                <input type="date" name="date" id="edit-dueDate" required>
+                <select name="priority" id="edit-priority">
+                    <option value="" disabled selected>Select priority</option>
+                    <option value="High">High</option>
+                    <option value="Medium">Medium</option>
+                    <option value="Low">Low</option>
+                </select>
+                <button type="submit">Save Task</button>
+            </form>
+        </div>
     </div>
 
     <div id="description-modal" class="hidden modal">
-        <div class="bg-white rounded-lg p-6 w-96 relative">
+        <div class="modal-container">
             <button id="close-view-modal" class="absolute top-2 right-2 text-gray-500 hover:text-black">&times;</button>
             <h2 class="text-xl font-bold mb-4">Task Description</h2>
             <p id="view-description" class="text-gray-700">
@@ -78,7 +83,7 @@
     </div>
 
     <div id="create-project-modal" class="hidden modal">
-        <div class="bg-white rounded-lg p-6 w-96 relative">
+        <div class="modal-container">
             <button id="close-create-project-modal" class="absolute top-2 right-2 text-gray-500 hover:text-black">&times;</button>
             <h2 class="text-xl font-bold mb-4">Create a New Project</h2>
             <form id="create-project-form" class="space-y-4">
