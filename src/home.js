@@ -10,9 +10,7 @@ export const  homePage = () => {
     
   
     // content.append(h1);
-    let UI = ScreenController;
-    UI.app();
-
+  
     
     
 }
