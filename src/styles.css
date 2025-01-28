@@ -27,6 +27,7 @@
     background-size: cover;
     display: grid;
     grid-template-columns: 1fr 7fr;
+    grid-template-rows: 1fr 6fr;
     gap: 2rem
   }
   
@@ -68,12 +69,13 @@ li{
   }
 
   .header {
+    height: 15rem;
     grid-column: 2/-1;
-    grid-row: 2/-1;
+    grid-row: 1/2;
     display: grid;
     gap: 2rem;
     justify-content: center;
-    align-items: centers;
+    align-items: center;
   }
  
 
@@ -146,7 +148,7 @@ li{
     align-items: center;
     justify-content: start;
     gap: 2rem;
-    padding-top: 5rem;
+   
   }
 
   h1 {
@@ -221,6 +223,8 @@ li{
   }
   .task-container {
     width: 90%;
+    background-color: rgb(228, 228, 238);
+    border-radius: .5em;
   }
   .task {
   
