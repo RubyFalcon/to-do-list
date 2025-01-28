@@ -199,7 +199,8 @@ export const ScreenController = function () {
             checkbox.checked = task.done;
             updateTaskVisualState(task,taskList,  title, dueDate, editTaskButton, detailsTaskButton);
             checkbox.addEventListener('change', () => {
-                handleCheckboxChange(task, checkbox, title, dueDate, editTaskButton, detailsTaskButton);
+              
+                handleCheckboxChange(task, taskList, checkbox, title, dueDate, editTaskButton, detailsTaskButton);
             });
 
             
@@ -207,14 +208,16 @@ export const ScreenController = function () {
         
     }
     let updateTaskVisualState = function (task,taskList, taskTitle, editButton, detailsButton) {
-         
+      
         if (task.done) {
+          
             taskTitle.style.textDecoration = 'line-through';
             taskList.classList.add("completed");;
             editButton.disabled = true;
             detailsButton.disabled = true;
             
         } else {
+    
             taskTitle.style.textDecoration = 'none';
             taskList.classList.remove("completed");
             editButton.disabled = false;
