@@ -19,22 +19,24 @@ export const ScreenController = function () {
     const editCloseModal = document.getElementById('close-edit-modal')
     const closeModalBtn = document.getElementById('close-modal');
     const taskForm = document.getElementById('task-form');
-
+    const backdrop = document.querySelector(".modal-backdrop");
     let todoList = TodoController;
     let currentProject = null;
 
 
     const openModal = function () {
         modal.classList.remove("hidden");
+        backdrop.classList.remove("hidden");
     }
     const closeModal = function () {
         modal.classList.add("hidden");
+        backdrop.classList.add("hidden");
     }
 
     const submitModal = function () {
         taskForm.addEventListener('submit', (e) => {
             e.preventDefault();
-
+            const backdrop = document.querySelector(".modal-backdrop");
             // Get values from the form
             const title = document.getElementById('title').value;
             const description = document.getElementById('description').value;
@@ -48,22 +50,27 @@ export const ScreenController = function () {
             // Clear the form and close the modal
             taskForm.reset();
             modal.classList.add('hidden');
+            backdrop.classList.add("hidden");
             displayTasks();
         });
     }
 
     const openEditModal = function (task) {
         const editModal = document.getElementById('edit-modal');
+        const backdrop = document.querySelector(".modal-backdrop");
         document.getElementById('edit-title').value = task.title;
         document.getElementById('edit-description').value = task.description;
         document.getElementById('edit-dueDate').value = task.dueDate;
         document.getElementById('edit-priority').value = task.priority;
         editModal.classList.remove('hidden');
+        backdrop.classList.remove("hidden")
     };
 
     const closeEditModal = function () {
         const editModal = document.getElementById('edit-modal');
+        const backdrop = document.querySelector(".modal-backdrop");
         editModal.classList.add('hidden');
+        backdrop.classList.add("hidden")
     };
 
     const sumbitEditModal = function (currentTask) {
@@ -140,14 +147,7 @@ export const ScreenController = function () {
             checkbox.setAttribute("type", "checkbox");
             checkbox.setAttribute("name", "done");
             checkbox.classList.add("checkbox");
-            // if (task.done){
-            //     taskList.className = "task completed";
-            //     checkbox.checked = true;
-            // }
-            // else {
-            //     taskList.className = "task";
-            //     checkbox.checked =  false;
-            // }
+          
            
             const title = document.createElement("h2");
             title.classList.add("task-title");
@@ -157,8 +157,7 @@ export const ScreenController = function () {
             dueDate.textContent = formattedTaskDate;
             const description = document.createElement("p");
             description.textContent = task.description;
-            // const priority = document.createElement("p");
-            // priority.textContent = task.priority;
+          
             
             const secondList = document.createElement("li");
             secondList.className = "task-list";
@@ -329,36 +328,48 @@ export const ScreenController = function () {
 
     let openDescriptionModal = function (currentTask) {
         const descriptionModal = document.querySelector("#description-modal")
+        const backdrop = document.querySelector(".modal-backdrop");
         const param = document.querySelector("#set-description")
         descriptionModal.classList.remove("hidden");
+        backdrop.classList.remove("hidden");
         param.innerHTML = currentTask.description;
     }
 
     let closeDescriptionModal = function () {
         const closeViewModal = document.querySelector("#close-view-modal");
+        const backdrop = document.querySelector(".modal-backdrop");
         closeViewModal.addEventListener("click", function () {
             const descriptionModal = document.querySelector("#description-modal")
             descriptionModal.classList.add("hidden");
+            backdrop.classList.add("hidden");
         })
     }
 
     let openProjectModal = function () {
         const projectModal = document.querySelector("#create-project-modal")
+        const backdrop = document.querySelector(".modal-backdrop");
         projectModal.classList.remove("hidden");
+        backdrop.classList.remove("hidden");
     }
     
     let closeProjectModal = function () {
         const closeProjectModal = document.querySelector("#close-create-project-modal");
+       
+      
         closeProjectModal.addEventListener("click", function () {
             const projectModal = document.querySelector("#create-project-modal")
+            const backdrop = document.querySelector(".modal-backdrop");
+           
+            backdrop.classList.add("hidden");
             projectModal.classList.add("hidden");
+           
         })
     }
 
     const saveProjectModal = function () {
         const projectForm = document.getElementById('create-project-form');
         const projectModal = document.querySelector("#create-project-modal")
-
+        
         projectForm.onsubmit = (e) => {
             e.preventDefault();
 
