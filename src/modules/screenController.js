@@ -243,8 +243,7 @@ export const ScreenController = function () {
                 }
 
                 console.log(event.target);
-                event.target.classList.add("bg-blue-100");
-                event.target.classList.add("text-blue-600")
+             
 
                 currentProject = todoList.findProject(event.target.innerHTML);
                 console.log(`Current Project Name: ${currentProject.getName()}`);
