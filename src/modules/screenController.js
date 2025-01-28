@@ -388,6 +388,7 @@ export const ScreenController = function () {
 
             // Close modal, clear form, and refresh the task list
             projectModal.classList.add("hidden");
+            backdrop.classList.add("hidden");
             projectForm.reset();
             displayTasks();
             displayProjects();
