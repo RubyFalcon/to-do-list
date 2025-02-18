@@ -22,6 +22,8 @@ The **to-do-list** webpage provides an easy to use to do application allowing fo
 - **Searchbar**: Allow users to search for a specific ToDO
 - **Themes**: First idea is a dark mode toggle and updated UI to look and feel more like Todoist.
 - **Improve Responsiveness**: For mobile and tablet users.
+- **React Refactor**: Refactor the current code into React code and JSX
+- **API integration** : Develop a ToDO API to host users Data (Either Node or Django)
 
 
 ## 📜 License
